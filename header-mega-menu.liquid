@@ -15,6 +15,7 @@
               <summary
                 id="HeaderMenu-{{ link.handle }}"
                 class="header__menu-item list-menu__item link focus-inset"
+                data-title="{{ link.title | escape }}"
               >
                 <span
                   {%- if link.child_active %}
@@ -78,6 +79,7 @@
             {% if link.current %}
               aria-current="page"
             {% endif %}
+            data-title="{{ link.title | escape }}"
           >
             <span
               {%- if link.current %}

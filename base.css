@@ -2836,6 +2836,13 @@ details[open] > .header__submenu {
   padding: 1.2rem;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  outline: 2px solid transparent;
+  outline-offset: 0;
+  font-weight: 600;
 }
 
 .header__menu-item:hover {
@@ -2950,11 +2957,14 @@ details-disclosure > details {
 /* Create an invisible bold copy to reserve space */
 .header__menu-item::after {
   content: attr(data-title);
-  font-weight: 600; /* whatever your hover bold weight is */
+  font-weight: 700; /* match the hover weight */
+  position: absolute;
+  inset: 0;
   height: 0;
   overflow: hidden;
   visibility: hidden;
   display: block;
+  white-space: nowrap;
   pointer-events: none;
   user-select: none;
 }
@@ -3730,15 +3740,10 @@ details-disclosure > details {
 }
 
 .header__menu-item:hover {
-  border: 2px solid #1c1608;
-  border-radius: 30px;
+  outline-color: #1c1608;
   font-weight: bold;
   color: black;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
 }
 
 a span {
