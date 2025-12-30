@@ -2839,9 +2839,9 @@ details[open] > .header__submenu {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid transparent;
-  border-radius: 30px;
-  line-height: 1;
+  box-sizing: border-box;
+  outline: 2px solid transparent;
+  outline-offset: 0;
 }
 
 .header__menu-item:hover {
@@ -2956,7 +2956,7 @@ details-disclosure > details {
 /* Create an invisible bold copy to reserve space */
 .header__menu-item::after {
   content: attr(data-title);
-  font-weight: 600; /* whatever your hover bold weight is */
+  font-weight: 700; /* match the hover weight */
   height: 0;
   overflow: hidden;
   visibility: hidden;
@@ -3737,7 +3737,7 @@ details-disclosure > details {
 }
 
 .header__menu-item:hover {
-  border: 2px solid #1c1608;
+  outline-color: #1c1608;
   font-weight: bold;
   color: black;
   text-decoration: none;
