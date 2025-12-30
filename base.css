@@ -2842,6 +2842,24 @@ details[open] > .header__submenu {
   color: rgb(var(--color-foreground));
 }
 
+.header__inline-menu .header__menu-item {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  line-height: 1;
+  box-sizing: border-box;
+  transition: color var(--duration-short) ease,
+    border-color var(--duration-short) ease,
+    font-weight var(--duration-short) ease;
+}
+
+.header__inline-menu .header__menu-item:hover {
+  border-color: #1c1608;
+  font-weight: 700;
+}
+
 .header__menu-item span {
   transition: text-decoration var(--duration-short) ease;
 }
@@ -2941,28 +2959,19 @@ details-disclosure > details {
   }
 }
 
-/* Prevent menu shifting when font-weight changes on hover */
-.header__menu-item {
-  display: inline-flex; /* keeps padding behaving nicely */
-  position: relative;
-}
-
 /* Create an invisible bold copy to reserve space */
-.header__menu-item::after {
+.header__inline-menu .header__menu-item::after {
   content: attr(data-title);
-  font-weight: 600; /* whatever your hover bold weight is */
+  font-weight: 700; /* match hover bold weight */
   height: 0;
   overflow: hidden;
   visibility: hidden;
   display: block;
   pointer-events: none;
   user-select: none;
+  white-space: nowrap;
 }
 
-/* Provide the text to the pseudo-element */
-.header__menu-item {
-  /* fallback if data-title isn't present */
-}
 .overflow-hidden-mobile,
 .overflow-hidden-tablet,
 .overflow-hidden-desktop {
@@ -3727,18 +3736,6 @@ details-disclosure > details {
   background-color: #f5f4f0;
   color: #1c1608;
   border: 2px solid #1c1608;
-}
-
-.header__menu-item:hover {
-  border: 2px solid #1c1608;
-  border-radius: 30px;
-  font-weight: bold;
-  color: black;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
 }
 
 a span {
