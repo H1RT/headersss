@@ -2960,7 +2960,8 @@ details-disclosure > details {
   height: 0;
   overflow: hidden;
   visibility: hidden;
-  display: block;
+  display: inline-block;
+  white-space: nowrap;
   pointer-events: none;
   user-select: none;
 }
