@@ -2842,6 +2842,7 @@ details[open] > .header__submenu {
   box-sizing: border-box;
   outline: 2px solid transparent;
   outline-offset: 0;
+  font-weight: 600;
 }
 
 .header__menu-item:hover {
@@ -2957,10 +2958,12 @@ details-disclosure > details {
 .header__menu-item::after {
   content: attr(data-title);
   font-weight: 700; /* match the hover weight */
+  position: absolute;
+  inset: 0;
   height: 0;
   overflow: hidden;
   visibility: hidden;
-  display: inline-block;
+  display: block;
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
