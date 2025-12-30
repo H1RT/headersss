@@ -42,7 +42,7 @@
                         {% if childlink.current %}
                           aria-current="page"
                         {% endif %}
-                         data-title="{{ link.title | escape }}"
+                        data-title="{{ childlink.title | escape }}"
                       >
                         {{ childlink.title | escape }}
                       </a>
@@ -51,7 +51,7 @@
                         <summary
                           id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                           class="header__menu-item link link--text list-menu__item focus-inset caption-large"
-                          data-title="{{ link.title | escape }}"
+                          data-title="{{ childlink.title | escape }}"
                         >
                           <span>{{ childlink.title | escape }}</span>
                           {{- 'icon-caret.svg' | inline_asset_content -}}
@@ -69,7 +69,7 @@
                                 {% if grandchildlink.current %}
                                   aria-current="page"
                                 {% endif %}
-                                 data-title="{{ link.title | escape }}"
+                                data-title="{{ grandchildlink.title | escape }}"
                               >
                                 {{ grandchildlink.title | escape }}
                               </a>
